@@ -62,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
             // Check if spotted
             if (Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), .4f, spotted))
             {
+                turn--;
                 StartCoroutine(Lose());
             }
         }
