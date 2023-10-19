@@ -8,8 +8,7 @@ public class GuardBehavior : MonoBehaviour
     public int startingPos;
     public GameObject player; 
     public int turnRate;
-    public int yDirection;
-    public int xDirection;
+    public int turnAngle;
 
     private int guardTurn;
     private int playerTurn;
@@ -23,17 +22,16 @@ public class GuardBehavior : MonoBehaviour
     void Update()
     {
         playerTurn = player.GetComponent<PlayerMovement>().turn;
-        if (guardTurn != (startingPos + playerTurn))
+        if (guardTurn != (startingPos + playerTurn) && player.GetComponent<PlayerMovement>().confirmedMove)
         {
             guardTurn = startingPos + playerTurn;
             if (guardTurn % turnRate == 0) 
             {
-                transform.Rotate(new Vector3(180, 0, 0));
-                yDirection = -yDirection;
+                transform.Rotate(new Vector3(0, 0, turnAngle));
             }
             else
             {
-                transform.position += new Vector3(xDirection, yDirection, 0);
+                transform.position += -transform.up;
             }
         }
     }

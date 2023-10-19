@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask stop;
     public LayerMask spotted;
+    public bool confirmedMove;
     public int turn = 0;
     public GameObject restartObject;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!disablePlay)
         {
+            confirmedMove = false;
             // Movement
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -62,8 +64,10 @@ public class PlayerMovement : MonoBehaviour
             // Check if spotted
             if (Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), .4f, spotted))
             {
-                turn--;
                 StartCoroutine(Lose());
+            } else
+            {
+                confirmedMove = true;
             }
         }
     }

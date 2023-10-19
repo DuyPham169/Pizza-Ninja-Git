@@ -824,8 +824,7 @@ MonoBehaviour:
   startingPos: 2
   player: {fileID: 2087068469}
   turnRate: 6
-  yDirection: 1
-  xDirection: 0
+  turnAngle: 180
 --- !u!483693784 &712870265
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -890,7 +889,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -900,7 +899,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -945,8 +944,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3
+  - m_RefCount: 1
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 2
+    m_Data: {r: 1, g: 1, b: 1, a: 0.6666667}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1106,7 +1107,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -1116,7 +1117,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
+      m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
@@ -1161,8 +1162,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3
+  - m_RefCount: 1
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 2
+    m_Data: {r: 1, g: 1, b: 1, a: 0.6666667}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1202,8 +1205,7 @@ MonoBehaviour:
   startingPos: 3
   player: {fileID: 2087068469}
   turnRate: 8
-  yDirection: -1
-  xDirection: 0
+  turnAngle: 180
 --- !u!19719996 &1128822935
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2493,6 +2495,7 @@ MonoBehaviour:
   spotted:
     serializedVersion: 2
     m_Bits: 128
+  confirmedMove: 0
   turn: 0
   restartObject: {fileID: 1598266112}
 --- !u!50 &2087068471

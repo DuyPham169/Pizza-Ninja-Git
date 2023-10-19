@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cheese Detection_1
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -1677402622, guid: f04d021b1fb861043b6a1067d94b4c72, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6666667}
   m_Transform:
     e00: 1
     e01: 0
