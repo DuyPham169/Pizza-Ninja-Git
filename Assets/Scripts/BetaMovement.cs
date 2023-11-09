@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class BetaMovement : MonoBehaviour
 {
     private float step = 1f;
     private bool disablePlay;
@@ -12,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask spotted;
     public bool confirmedMove;
     public int turn = 0;
-    public GameObject restartObject;
+    public string sceneName;
 
     public SpriteRenderer render;
     public Sprite spriteUp;
@@ -87,6 +88,6 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        restartObject.GetComponent<Restart>().RestartingLevel();
+        SceneManager.LoadScene(sceneName);
     }
 }
